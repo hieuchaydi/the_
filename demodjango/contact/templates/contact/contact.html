@@ -1,0 +1,11 @@
+{% extends "home/base.html" %}
+
+{% block content %}
+    <h2>Contact Page</h2>
+    
+    <form action="{% url 'contact:contact' %}" method="post">
+        {% csrf_token %}
+        {{ cf.as_p }}  {# Use cf.as_p to render the form fields as paragraphs #}
+        <button type="submit">Submit</button>  {# Use <button> tag for submit button #}
+    </form>
+{% endblock %}
